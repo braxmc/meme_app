@@ -5,19 +5,19 @@ class Api::PostsController < ApplicationController
 
   def create
     post = Post.new(post_params)
-    if (post.save)
+    if post.save
       render json: post
     else
-      render json { errors: post.errors }, status: :uprocessable_entity
+      render json: { errors: post.errors }, status: :uprocessable_entity
     end
   end
 
   def update
     post = Post.find(params[:id])
-    if (post.update)
+    if post.update
       render json: post
     else
-      render json { errors: post.errors }, status: :uprocessable_entity  
+      render json: { errors: post.errors }, status: :uprocessable_entity  
     end
   end
 

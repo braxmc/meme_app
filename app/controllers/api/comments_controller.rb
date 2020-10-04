@@ -26,7 +26,6 @@ class Api::CommentsController < ApplicationController
   def destroy
     @posts.comments.find(params[:id]).destroy
     render json: { message: 'Comment Deleted'}
-
   end
 
   private
