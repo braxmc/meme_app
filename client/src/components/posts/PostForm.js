@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Form } from 'semantic-ui-react';
 
 class PostForm extends Component {
@@ -12,17 +12,17 @@ class PostForm extends Component {
   }
 
   handleChange = (e) => {
-    const { name, value} = e.target
+    const { name, value } = e.target
     this.setState({ [name]: value })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     if (this.props.id) {
-      const { id, updatePost } = this.props
-      updatePost(id, this.sate)
-    }
-    else {
+      const { id, updatePost, close } = this.props
+      updatePost(id, this.state)
+      close()
+    } else {
       this.props.addPost(this.state)
     }
     this.setState({ pTitle: '', pInfo: '', pBody: '', pImg: '' })
