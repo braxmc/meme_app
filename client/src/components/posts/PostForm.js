@@ -12,7 +12,7 @@ class PostForm extends Component {
   }
 
   handleChange = (e) => {
-    const { name, value } = e.target
+    const { name, value} = e.target
     this.setState({ [name]: value })
   }
 
@@ -23,6 +23,8 @@ class PostForm extends Component {
       updatePost(id, this.state)
       close()
     } else {
+      const { close } = this.props
+      close()
       this.props.addPost(this.state)
     }
     this.setState({ pTitle: '', pInfo: '', pBody: '', pImg: '' })

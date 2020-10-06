@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import PostForm from './PostForm';
 import PostList from './PostList';
+import NewPost from './NewPost';
 
 
 class Posts extends Component {
@@ -55,7 +56,7 @@ class Posts extends Component {
     return (
       <Container>
         <Header>All Posts</Header>
-        <PostForm addPost={this.addPost} />
+        <NewPost addPost={this.addPost} />
         <PostList 
           posts={posts}
           updatePost={this.updatePost}
